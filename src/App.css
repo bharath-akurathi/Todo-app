@@ -171,6 +171,7 @@
 @media (min-width: 700px) {
     .mainSection {
         padding: 40px 48px;
+        margin: 20px;
     }
 
     .heading {
