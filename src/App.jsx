@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import './App.css'
+import editIcon from "./assets/edit.png";
+import deleteIcon from "./assets/wrong.svg";
 
 function App() {
   const [todos, setTodos] = useState([])
@@ -83,13 +85,13 @@ function App() {
         <button className='edit' onClick={() => {
           setEditingId(params.id)
           setEditingText(params.text)
-        }}><img src="/edit.png" width="16px" height="16px" alt="edit" /></button>
+        }}><img src={editIcon} width="16px" height="16px" alt="edit" /></button>
 
         <button className='delete' onClick={() => {
           setTodos(prev => prev.filter((todo) => todo.id !== params.id)); // Remove the todo whose id equals params.id
           // For each todo in the list: Keep it only if its id does NOT match params.id.
         }}>
-          <img src="/wrong.svg" width="12px" height="12px" alt="delete" />
+          <img src={deleteIcon} width="12px" height="12px" alt="delete" />
         </button>
       </div >
     )
